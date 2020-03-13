@@ -15,7 +15,6 @@ export const Modal = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 
   form {
     height: 60%;
@@ -32,14 +31,14 @@ export const Modal = styled.div`
       border: none;
       border-bottom: 1px solid #360033;
       margin: 10px 0;
-      
+
       ::placeholder {
         color: #000;
       }
     }
 
-    button{
-      background: #0B8793;
+    button {
+      background: #0b8793;
       border-radius: 5px;
       height: 52px;
       color: white;
