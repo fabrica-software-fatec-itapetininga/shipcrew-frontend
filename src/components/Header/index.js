@@ -15,9 +15,14 @@ import Logo from '../../assets/logo.svg';
 
 export default function Header() {
   const [show, setShow] = useState(false);
+  const [activeItem, setActiveItem] = useState('1');
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  function toggle(tab) {
+    if (activeItem !== tab) setActiveItem(tab);
+  }
 
   return (
     <Container>
@@ -53,7 +58,13 @@ export default function Header() {
           </Modal.Header>
           <Modal.Body>
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-              <Tab eventKey="general" title="Geral">
+              <Tab
+                eventKey="general"
+                title="Geral"
+                role="tab"
+                active={activeItem === '1'}
+                onClick={() => toggle('1')}
+              >
                 <Form>
                   <Input name="name" placeholder="Nome" />
                   <Input name="email" placeholder="E-mail" />
@@ -65,7 +76,13 @@ export default function Header() {
                   </Button>
                 </Form>
               </Tab>
-              <Tab eventKey="change-password" title="Alterar senha">
+              <Tab
+                eventKey="change-password"
+                title="Alterar senha"
+                role="tab"
+                active={activeItem === '2'}
+                onClick={() => toggle('2')}
+              >
                 <Form>
                   <Input name="password" placeholder="Senha atual" />
                   <Input name="new-password" placeholder="Nova senha" />
@@ -81,7 +98,13 @@ export default function Header() {
                   </Button>
                 </Form>
               </Tab>
-              <Tab eventKey="delete-account" title="Deletar cadastro">
+              <Tab
+                eventKey="delete-account"
+                title="Deletar cadastro"
+                active={activeItem === '3'}
+                onClick={() => toggle('3')}
+                role="tab"
+              >
                 <p>
                   Tem certeza que deseja deletar o cadastro? Todos os dados
                   serão perdidos!
