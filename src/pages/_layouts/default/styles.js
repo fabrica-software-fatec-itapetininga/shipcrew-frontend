@@ -6,7 +6,7 @@ export const Container = styled.div`
   grid-template-rows: 108px 1fr;
   grid-template-areas:
     'header header'
-    'sidenav main';
+    'sidebar . ';
   background: linear-gradient(
       125.21deg,
       #360033 0%,
@@ -14,5 +14,5 @@ export const Container = styled.div`
     ),
     #ffffff;
 
-  height: 100%;
+  min-height: 100%;
 `;
