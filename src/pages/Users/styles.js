@@ -53,7 +53,6 @@ export const Container = styled.div`
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
-    
   .modal-header {
     border: none;
     padding-bottom: 0;
@@ -84,6 +83,7 @@ export const ModalContent = styled.div`
       justify-content: space-between;
       margin: 0;
       padding: 0;
-      border: none
+      border: none;
     }
+  }
 `;

@@ -9,15 +9,25 @@ import {
 } from 'react-bootstrap';
 import { FaSignOutAlt, FaCog } from 'react-icons/fa';
 import { Form, Input } from '@rocketseat/unform';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { signOut } from '../../store/modules/auth/actions';
 
 import { Container, ModalContent } from './styles';
 import Logo from '../../assets/logo.svg';
 
 export default function Header() {
+  const profile = useSelector(state => state.user.profile);
+  const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  function handleSignOut() {
+    dispatch(signOut());
+  }
 
   return (
     <Container>
@@ -26,7 +36,7 @@ export default function Header() {
       <DropdownButton
         variant="light"
         alignRight
-        title="Mock"
+        title={profile.name}
         id="dropdown-menu-align-right"
       >
         <Dropdown.Item
@@ -37,7 +47,7 @@ export default function Header() {
           <FaCog style={{ marginRight: 10 }} />
           Configurações
         </Dropdown.Item>
-        <Dropdown.Item eventKey="2" variant="light">
+        <Dropdown.Item eventKey="2" variant="light" onClick={handleSignOut}>
           <FaSignOutAlt />
           Sair
         </Dropdown.Item>
