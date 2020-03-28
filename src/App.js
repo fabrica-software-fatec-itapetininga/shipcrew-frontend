@@ -11,6 +11,7 @@ import history from './services/history';
 import { store, persistor } from './store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import './config/reactotronConfig';
 
 import GlobalStyle from './styles/global';

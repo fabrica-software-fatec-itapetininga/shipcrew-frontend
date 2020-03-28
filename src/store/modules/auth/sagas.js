@@ -16,6 +16,7 @@ export function* signIn({ payload }) {
     });
 
     const { token, user } = response.data;
+    toast.success(`Seja bem vindo ${user.name}`);
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 

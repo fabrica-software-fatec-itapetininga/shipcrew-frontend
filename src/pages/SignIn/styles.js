@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   display: flex;
@@ -32,6 +33,10 @@ export const Modal = styled.div`
       border-bottom: 1px solid #360033;
       margin: 10px 0;
 
+      &-internal-autofill-selected {
+        background: none;
+      }
+
       ::placeholder {
         color: #000;
       }
@@ -43,6 +48,11 @@ export const Modal = styled.div`
       height: 52px;
       color: white;
       font-size: 20px;
+      transition: background 0.2s;
+
+      &:hover {
+        background: ${darken(0.03, '#0b8793')};
+      }
     }
   }
 `;

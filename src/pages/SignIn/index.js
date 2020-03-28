@@ -27,7 +27,7 @@ export default function SignIn() {
 
           <Input name="password" type="password" placeholder="Senha" />
 
-          <button type="submit">Login</button>
+          <button type="submit">{loading ? 'Carregando...' : 'Entrar'}</button>
         </Form>
       </Modal>
     </Container>

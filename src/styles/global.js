@@ -37,4 +37,7 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  input:-webkit-autofill {
+    background: transparent;
+}
 `;
